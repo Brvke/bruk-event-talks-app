@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Talks 2026</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .search-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #search {
+      padding: 10px;
+      width: 50%;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .talk {
+      display: flex;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 5px solid #007bff;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+    .talk.lunch {
+      border-left-color: #28a745;
+    }
+    .time {
+      flex: 0 0 150px;
+      font-weight: bold;
+      color: #007bff;
+    }
+    .details {
+      flex: 1;
+    }
+    .details h3 {
+      margin-top: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tech Talks 2026</h1>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search by category...">
+    </div>
+    <div id="schedule">
+      
+      <div class="talk" data-category="ai machine learning">
+        <div class="time">10:00 AM - 11:00 AM</div>
+        <div class="details">
+          <h3>The Future of Artificial Intelligence</h3>
+          <p><strong>Speakers:</strong> Alex Johnson</p>
+          <p><strong>Category:</strong> AI, Machine Learning</p>
+          <p>A deep dive into the latest advancements in AI and what to expect in the coming years.</p>
+        </div>
+      </div>
+    
+      <div class="talk" data-category="web development scalability">
+        <div class="time">11:10 AM - 12:10 PM</div>
+        <div class="details">
+          <h3>Building Scalable Web Applications</h3>
+          <p><strong>Speakers:</strong> Brenda Smith, John Doe</p>
+          <p><strong>Category:</strong> Web Development, Scalability</p>
+          <p>Learn the best practices for building web applications that can handle millions of users.</p>
+        </div>
+      </div>
+    
+      <div class="talk" data-category="cybersecurity security">
+        <div class="time">12:20 PM - 01:20 PM</div>
+        <div class="details">
+          <h3>Cybersecurity in the Modern Age</h3>
+          <p><strong>Speakers:</strong> Charles Brown</p>
+          <p><strong>Category:</strong> Cybersecurity, Security</p>
+          <p>An overview of the current cybersecurity landscape and how to protect your digital assets.</p>
+        </div>
+      </div>
+    
+        <div class="talk lunch">
+          <div class="time">01:30 PM - 02:30 PM</div>
+          <div class="details">
+            <h3>Lunch Break</h3>
+          </div>
+        </div>
+      
+      <div class="talk" data-category="quantum computing physics">
+        <div class="time">02:30 PM - 03:30 PM</div>
+        <div class="details">
+          <h3>The Rise of Quantum Computing</h3>
+          <p><strong>Speakers:</strong> Diana Prince</p>
+          <p><strong>Category:</strong> Quantum Computing, Physics</p>
+          <p>Explore the principles of quantum computing and its potential to revolutionize technology.</p>
+        </div>
+      </div>
+    
+      <div class="talk" data-category="ux ui design">
+        <div class="time">03:40 PM - 04:40 PM</div>
+        <div class="details">
+          <h3>Mastering UX/UI Design</h3>
+          <p><strong>Speakers:</strong> Ethan Hunt, Frank Martin</p>
+          <p><strong>Category:</strong> UX, UI, Design</p>
+          <p>Tips and tricks for creating intuitive and beautiful user experiences.</p>
+        </div>
+      </div>
+    
+      <div class="talk" data-category="devops ci/cd">
+        <div class="time">04:50 PM - 05:50 PM</div>
+        <div class="details">
+          <h3>DevOps: From Code to Deployment</h3>
+          <p><strong>Speakers:</strong> Grace Hopper</p>
+          <p><strong>Category:</strong> DevOps, CI/CD</p>
+          <p>A comprehensive guide to implementing DevOps practices in your development workflow.</p>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  <script>
+    const searchInput = document.getElementById('search');
+    const talks = document.querySelectorAll('.talk:not(.lunch)');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      talks.forEach(talk => {
+        const categories = talk.dataset.category;
+        if (categories.includes(searchTerm)) {
+          talk.style.display = 'flex';
+        } else {
+          talk.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
